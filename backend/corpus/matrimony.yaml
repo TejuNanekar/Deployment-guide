@@ -1,0 +1,164 @@
+project_id: matrimony-platform
+description: >
+  One server, five applications. Explicit files keep their labels.
+  A new workflow beside them is indexed as unassigned until this file names it.
+
+documents:
+  - repo: deployment-guide
+    path: Matrimony-Deployment-Guide.md
+    document_type: deployment
+    component: guide
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/DEPLOYMENT_STRATEGY.md
+    document_type: deployment
+    component: platform
+    environment: uat
+    status: proposed
+  - repo: matrimony-platform
+    path: deploy/LEGACY_APPS_DEPLOYMENT.md
+    document_type: deployment
+    component: legacy
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/podman-compose/SETUP.md
+    document_type: deployment
+    component: shared
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/podman-compose/deploy-app.sh
+    document_type: script
+    component: platform
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/podman-compose/deploy-legacy.sh
+    document_type: script
+    component: legacy
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/podman-compose/mysql-backup.sh
+    document_type: script
+    component: shared
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/podman-compose/compose.yaml
+    document_type: config
+    component: shared
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/push-env.sh
+    document_type: script
+    component: shared
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/backend.env.example
+    document_type: config
+    component: api
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/podman-compose/nginx/conf.d/00-common.conf
+    document_type: config
+    component: shared
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/podman-compose/nginx/conf.d/matrimony.conf
+    document_type: config
+    component: platform
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/podman-compose/nginx/conf.d/proxy.inc
+    document_type: config
+    component: platform
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/podman-compose/legacy/nginx/anupam-admin.conf
+    document_type: config
+    component: legacy-admin
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/podman-compose/legacy/nginx/anupam-api.conf
+    document_type: config
+    component: legacy-api
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/podman-compose/legacy/nginx/anupam-portal.inc
+    document_type: config
+    component: legacy-portal
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/podman-compose/legacy/php-fpm/anupam-admin.conf
+    document_type: config
+    component: legacy-admin
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/podman-compose/legacy/php-fpm/anupam-api.conf
+    document_type: config
+    component: legacy-api
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: deploy/podman-compose/legacy/php-fpm/anupam-portal.conf
+    document_type: config
+    component: legacy-portal
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: .github/workflows/deploy.yml
+    document_type: pipeline
+    component: api
+    environment: uat
+    status: current
+  - repo: matrimony-platform
+    path: .github/workflows/main.yml
+    document_type: pipeline
+    component: api
+    environment: uat
+    status: outdated
+  - repo: matrimony-platform
+    path: docs/UAT_DB_BACKWARD_COMPATIBILITY_REVIEW.md
+    document_type: architecture
+    component: shared
+    environment: uat
+    status: current
+  - repo: matrimony-platform-ui
+    path: .github/workflows/deploy.yml
+    document_type: pipeline
+    component: ui
+    environment: uat
+    status: current
+  - repo: matrimony-platform-ui
+    path: .github/workflows/main.yml
+    document_type: pipeline
+    component: ui
+    environment: uat
+    status: outdated
+
+watch:
+  - repo: matrimony-platform
+    glob: .github/workflows/*.{yml,yaml}
+    document_type: pipeline
+    component: unassigned
+    environment: uat
+    status: unassigned
+  - repo: matrimony-platform-ui
+    glob: .github/workflows/*.{yml,yaml}
+    document_type: pipeline
+    component: unassigned
+    environment: uat
+    status: unassigned
