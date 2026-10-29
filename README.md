@@ -1,6 +1,5 @@
 # Deployment-guide
-# Matrimony deployment assistant
-Answers Matrimony deployment questions from the files already in the Matrimony repos. It does not SSH and it does not run a deploy.
+Answers deployment questions from the files already in the repos. It does not SSH and it does not run a deploy.
 Needs Python 3, Node.js, and a Groq API key. Qdrant runs locally by default.
 ## Setup
 ```bash
@@ -8,9 +7,7 @@ cd backend
 python -m pip install -r requirements.txt
 copy .env.example .env
 ```
-In `backend/.env`, set `GROQ_API_KEY` and the two checkout paths:
-- `MATRIMONY_PLATFORM_ROOT` — API repo
-- `MATRIMONY_UI_ROOT` — UI repo
+
 ```bash
 cd frontend
 npm install
